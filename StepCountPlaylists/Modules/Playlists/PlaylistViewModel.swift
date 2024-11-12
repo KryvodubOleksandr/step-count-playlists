@@ -12,6 +12,7 @@ import HealthKit
 final class PlaylistViewModel: ObservableObject {
     @Published var activityLevel: ActivityLevel?
     @Published var stepsByDate: [Date: Int] {
+        // Calculating activity level once stepsByDate dictionary is fetched
         didSet { calculateActivity() }
     }
     private let stepCountStore: StepCountLoading
@@ -27,11 +28,12 @@ final class PlaylistViewModel: ObservableObject {
 extension PlaylistViewModel {
     private func calculateActivity() {
         var avgStepCountForHour: [Int: Int] = [:]
+        // Calculating average steps for every hour throughout last week
         for value in 0...23 {
             let nearestHourDate = Date().adding(hours: value).nearestHour()
             avgStepCountForHour[nearestHourDate.asHours] = calculateStepsFor(hours: value, date: nearestHourDate)
         }
-        
+
         let maxStepCount = Array(avgStepCountForHour.values).max() ?? 0
         let minStepCount = Array(avgStepCountForHour.values).min() ?? 0
         let avgStepCount = minStepCount + maxStepCount / 2
@@ -50,6 +52,7 @@ extension PlaylistViewModel {
         }
     }
     
+    // Iterating through every day of the week to calculate an average step for a given time
     private func calculateStepsFor(hours: Int, date: Date) -> Int {
         var stepCountArray: [Int] = []
         for value in -7...0 {
@@ -65,17 +68,8 @@ extension PlaylistViewModel {
 }
 
 //MARK: - loadSteps
-//extension PlaylistsViewModel {
-    enum ActivityLevel: String {
-        case low = "Relaxing"
-        case moderate = "Focused"
-        case high = "Energizing"
-    }
-//}
-
-//MARK: - loadSteps
 extension PlaylistViewModel {
-    private func getQuery() throws -> HKStatisticsCollectionQuery {
+    private func prepareQuery() throws -> HKStatisticsCollectionQuery {
         guard let stepCountType = HKObjectType.quantityType(forIdentifier: .stepCount) else {
             throw HealthKitError.stepCountType
         }
@@ -103,7 +97,7 @@ extension PlaylistViewModel {
             throw CalendarError.dateCreation
         }
         var stepsByDateDict: [Date: Int] = [:]
-        let query = try getQuery()
+        let query = try prepareQuery()
         
         query.initialResultsHandler = { [weak self] query, results, error in
             guard let self else { return }

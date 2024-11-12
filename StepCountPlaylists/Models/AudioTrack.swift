@@ -34,3 +34,9 @@ extension AudioTrack {
         ]
     }
 }
+
+enum ActivityLevel: String {
+    case low = "Relaxing"
+    case moderate = "Focused"
+    case high = "Energizing"
+}
