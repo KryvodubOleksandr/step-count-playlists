@@ -5,10 +5,8 @@ This app requests your step count from HealthKit upon first launch, fetches it a
 Trade-offs: 
 - No tests (especially important because of the steps count calculations complexity)
 - No proper error handling
-- No handling of health authorization request decline.
 
 Ways to improve: 
 - move steps count fetching and calculation into separate classes
 - improve types safety for calculation algorithm and cover it with tests
 - save steps count data to keychain
-- request health data authorization only if its necessary
