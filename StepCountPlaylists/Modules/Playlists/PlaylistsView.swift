@@ -47,7 +47,7 @@ extension PlaylistsView {
                                 .frame(height: 70)
                                 .background {
                                     RoundedRectangle(cornerRadius: 16)
-                                        .fill(Color.gray.opacity(0.5))
+                                        .fill(Color.gray.opacity(0.3))
                                 }
                         }
                     }
