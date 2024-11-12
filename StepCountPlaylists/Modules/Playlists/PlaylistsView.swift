@@ -12,25 +12,23 @@ struct PlaylistsView: View {
     @StateObject var playlistsVM = ViewModelProvider.playlists
     
     var body: some View {
-        ScrollView {
-            LazyVStack {
-                ForEach(dates, id: \.self) { date in
-                    Text(date.description)
-                }
+        Group {
+            if let activityLevel = playlistsVM.activityLevel {
+                Text("Your average activity for this time of day is: \(activityLevel.rawValue)")
+                    .font(.title)
+            } else {
+                ProgressView()
             }
         }
         .padding()
         .onAppear {
+            //TODO: Add proper error handling
             do {
                 try playlistsVM.loadSteps()
             } catch {
                 print(error.localizedDescription)
             }
         }
-    }
-    
-    var dates: [Date] {
-        Array(playlistsVM.stepsByDate.keys)
     }
 }
 
