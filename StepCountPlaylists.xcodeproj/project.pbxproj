@@ -6,17 +6,29 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		C6BC73622CE33BFD0055DB70 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6BC735B2CE33BFD0055DB70 /* Preview Assets.xcassets */; };
+		C6BC73632CE33BFD0055DB70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6BC735D2CE33BFD0055DB70 /* Assets.xcassets */; };
+		C6BC73642CE33BFD0055DB70 /* PlaylistsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BC735E2CE33BFD0055DB70 /* PlaylistsView.swift */; };
+		C6BC73652CE33BFD0055DB70 /* StepCountPlaylistsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BC73602CE33BFD0055DB70 /* StepCountPlaylistsApp.swift */; };
+		C6BC73692CE33C310055DB70 /* PlaylistsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BC73682CE33C310055DB70 /* PlaylistsViewModel.swift */; };
+		C6BC736B2CE33F330055DB70 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BC736A2CE33F330055DB70 /* Errors.swift */; };
+		C6BC736D2CE343090055DB70 /* StepCountLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BC736C2CE343090055DB70 /* StepCountLoading.swift */; };
+		C6BC73752CE346900055DB70 /* ViewModelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BC73742CE346900055DB70 /* ViewModelProvider.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		C6BC73402CE32DB50055DB70 /* StepCountPlaylists.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StepCountPlaylists.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6BC735B2CE33BFD0055DB70 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C6BC735D2CE33BFD0055DB70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C6BC735E2CE33BFD0055DB70 /* PlaylistsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistsView.swift; sourceTree = "<group>"; };
+		C6BC735F2CE33BFD0055DB70 /* StepCountPlaylists.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StepCountPlaylists.entitlements; sourceTree = "<group>"; };
+		C6BC73602CE33BFD0055DB70 /* StepCountPlaylistsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepCountPlaylistsApp.swift; sourceTree = "<group>"; };
+		C6BC73682CE33C310055DB70 /* PlaylistsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistsViewModel.swift; sourceTree = "<group>"; };
+		C6BC736A2CE33F330055DB70 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		C6BC736C2CE343090055DB70 /* StepCountLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepCountLoading.swift; sourceTree = "<group>"; };
+		C6BC73742CE346900055DB70 /* ViewModelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		C6BC73422CE32DB50055DB70 /* StepCountPlaylists */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = StepCountPlaylists;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		C6BC733D2CE32DB50055DB70 /* Frameworks */ = {
@@ -32,7 +44,7 @@
 		C6BC73372CE32DB50055DB70 = {
 			isa = PBXGroup;
 			children = (
-				C6BC73422CE32DB50055DB70 /* StepCountPlaylists */,
+				C6BC73612CE33BFD0055DB70 /* StepCountPlaylists */,
 				C6BC73412CE32DB50055DB70 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +55,70 @@
 				C6BC73402CE32DB50055DB70 /* StepCountPlaylists.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		C6BC735C2CE33BFD0055DB70 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C6BC735B2CE33BFD0055DB70 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C6BC73612CE33BFD0055DB70 /* StepCountPlaylists */ = {
+			isa = PBXGroup;
+			children = (
+				C6BC73602CE33BFD0055DB70 /* StepCountPlaylistsApp.swift */,
+				C6BC73732CE346770055DB70 /* Architecture */,
+				C6BC736E2CE345BD0055DB70 /* Protocols */,
+				C6BC73712CE345F50055DB70 /* Modules */,
+				C6BC73722CE346130055DB70 /* Resources */,
+				C6BC736A2CE33F330055DB70 /* Errors.swift */,
+				C6BC735F2CE33BFD0055DB70 /* StepCountPlaylists.entitlements */,
+			);
+			path = StepCountPlaylists;
+			sourceTree = "<group>";
+		};
+		C6BC73662CE33C030055DB70 /* Playlists */ = {
+			isa = PBXGroup;
+			children = (
+				C6BC735E2CE33BFD0055DB70 /* PlaylistsView.swift */,
+				C6BC73682CE33C310055DB70 /* PlaylistsViewModel.swift */,
+			);
+			path = Playlists;
+			sourceTree = "<group>";
+		};
+		C6BC736E2CE345BD0055DB70 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				C6BC736C2CE343090055DB70 /* StepCountLoading.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		C6BC73712CE345F50055DB70 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				C6BC73662CE33C030055DB70 /* Playlists */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		C6BC73722CE346130055DB70 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C6BC735C2CE33BFD0055DB70 /* Preview Content */,
+				C6BC735D2CE33BFD0055DB70 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C6BC73732CE346770055DB70 /* Architecture */ = {
+			isa = PBXGroup;
+			children = (
+				C6BC73742CE346900055DB70 /* ViewModelProvider.swift */,
+			);
+			path = Architecture;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,9 +135,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				C6BC73422CE32DB50055DB70 /* StepCountPlaylists */,
 			);
 			name = StepCountPlaylists;
 			packageProductDependencies = (
@@ -109,6 +182,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6BC73622CE33BFD0055DB70 /* Preview Assets.xcassets in Resources */,
+				C6BC73632CE33BFD0055DB70 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +194,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6BC736B2CE33F330055DB70 /* Errors.swift in Sources */,
+				C6BC73752CE346900055DB70 /* ViewModelProvider.swift in Sources */,
+				C6BC736D2CE343090055DB70 /* StepCountLoading.swift in Sources */,
+				C6BC73642CE33BFD0055DB70 /* PlaylistsView.swift in Sources */,
+				C6BC73652CE33BFD0055DB70 /* StepCountPlaylistsApp.swift in Sources */,
+				C6BC73692CE33C310055DB70 /* PlaylistsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,10 +333,11 @@
 				CODE_SIGN_ENTITLEMENTS = StepCountPlaylists/StepCountPlaylists.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"StepCountPlaylists/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"StepCountPlaylists/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = FAYX4DNGDL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StepCountPlaylists/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "We need this to get your step count.";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "We need this to get your step count.";
@@ -288,10 +370,11 @@
 				CODE_SIGN_ENTITLEMENTS = StepCountPlaylists/StepCountPlaylists.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"StepCountPlaylists/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"StepCountPlaylists/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = FAYX4DNGDL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StepCountPlaylists/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "We need this to get your step count.";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "We need this to get your step count.";
