@@ -39,12 +39,14 @@ extension PlaylistsViewModel {
         let upperBound = maxStepCount - avgStepCount / 2
         let stepsForNow = avgStepCountForHour[Date().asHours] ?? 0
         
-        if stepsForNow < lowerBound {
-            self.activityLevel = .low
-        } else if stepsForNow >= lowerBound && stepsForNow < upperBound {
-            self.activityLevel = .moderate
-        } else if stepsForNow >= upperBound {
-            activityLevel = .high
+        withAnimation {
+            if stepsForNow < lowerBound {
+                self.activityLevel = .low
+            } else if stepsForNow >= lowerBound && stepsForNow < upperBound {
+                self.activityLevel = .moderate
+            } else if stepsForNow >= upperBound {
+                activityLevel = .high
+            }
         }
     }
     
@@ -63,11 +65,11 @@ extension PlaylistsViewModel {
 }
 
 //MARK: - loadSteps
-extension PlaylistsViewModel {
+//extension PlaylistsViewModel {
     enum ActivityLevel: String {
         case low, moderate, high
     }
-}
+//}
 
 //MARK: - loadSteps
 extension PlaylistsViewModel {
