@@ -17,6 +17,9 @@
 		C6BC73752CE346900055DB70 /* ViewModelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BC73742CE346900055DB70 /* ViewModelProvider.swift */; };
 		C6BC73992CE368860055DB70 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BC73982CE368860055DB70 /* Date.swift */; };
 		C6BC739E2CE3753E0055DB70 /* AudioTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BC739D2CE3753E0055DB70 /* AudioTrack.swift */; };
+		C6BC73A62CE3B8850055DB70 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BC73A52CE3B8850055DB70 /* RootViewModel.swift */; };
+		C6BC73A82CE3B88D0055DB70 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BC73A72CE3B88D0055DB70 /* RootView.swift */; };
+		C6BC73AA2CE3C3D70055DB70 /* HKAuthorizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BC73A92CE3C3D70055DB70 /* HKAuthorizable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		C6BC73742CE346900055DB70 /* ViewModelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProvider.swift; sourceTree = "<group>"; };
 		C6BC73982CE368860055DB70 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		C6BC739D2CE3753E0055DB70 /* AudioTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioTrack.swift; sourceTree = "<group>"; };
+		C6BC73A52CE3B8850055DB70 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
+		C6BC73A72CE3B88D0055DB70 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		C6BC73A92CE3C3D70055DB70 /* HKAuthorizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKAuthorizable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				C6BC736C2CE343090055DB70 /* StepCountLoading.swift */,
+				C6BC73A92CE3C3D70055DB70 /* HKAuthorizable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -105,6 +112,7 @@
 		C6BC73712CE345F50055DB70 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				C6BC73A42CE3B86D0055DB70 /* Root */,
 				C6BC73662CE33C030055DB70 /* Playlists */,
 			);
 			path = Modules;
@@ -141,6 +149,15 @@
 				C6BC739D2CE3753E0055DB70 /* AudioTrack.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		C6BC73A42CE3B86D0055DB70 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				C6BC73A52CE3B8850055DB70 /* RootViewModel.swift */,
+				C6BC73A72CE3B88D0055DB70 /* RootView.swift */,
+			);
+			path = Root;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,9 +237,12 @@
 				C6BC73752CE346900055DB70 /* ViewModelProvider.swift in Sources */,
 				C6BC73992CE368860055DB70 /* Date.swift in Sources */,
 				C6BC739E2CE3753E0055DB70 /* AudioTrack.swift in Sources */,
+				C6BC73A82CE3B88D0055DB70 /* RootView.swift in Sources */,
 				C6BC736D2CE343090055DB70 /* StepCountLoading.swift in Sources */,
 				C6BC73642CE33BFD0055DB70 /* PlaylistView.swift in Sources */,
+				C6BC73AA2CE3C3D70055DB70 /* HKAuthorizable.swift in Sources */,
 				C6BC73652CE33BFD0055DB70 /* StepCountPlaylistsApp.swift in Sources */,
+				C6BC73A62CE3B8850055DB70 /* RootViewModel.swift in Sources */,
 				C6BC73692CE33C310055DB70 /* PlaylistViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

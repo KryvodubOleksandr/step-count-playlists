@@ -11,4 +11,8 @@ enum ViewModelProvider {
     static var playlist: PlaylistViewModel {
         PlaylistViewModel(stepCountStore: healthStore)
     }
+    
+    static var root: RootViewModel {
+        RootViewModel(hkAuthorizingStore: healthStore)
+    }
 }
