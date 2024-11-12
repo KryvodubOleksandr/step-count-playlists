@@ -19,7 +19,7 @@ struct StepCountPlaylistsApp: App {
     var body: some Scene {
         WindowGroup {
             if isAuthorized {
-                PlaylistsView()
+                PlaylistView()
             } else {
                 Text("")
                     .onAppear {
@@ -30,8 +30,11 @@ struct StepCountPlaylistsApp: App {
             }
         }
     }
-    
-    func getHealthKitAuthorization(completion: @escaping (Bool) -> Void) {
+}
+
+//MARK: - getHealthKitAuthorization
+extension StepCountPlaylistsApp {
+    private func getHealthKitAuthorization(completion: @escaping (Bool) -> Void) {
         let healthKitTypes: Set = [HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)!]
         healthStore.requestAuthorization(toShare: healthKitTypes, read: healthKitTypes) { (success, error) in
             completion(success)

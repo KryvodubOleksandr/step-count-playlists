@@ -8,7 +8,7 @@
 import Foundation
 
 enum ViewModelProvider {
-    static var playlists: PlaylistsViewModel {
-        PlaylistsViewModel(stepCountStore: healthStore)
+    static var playlist: PlaylistViewModel {
+        PlaylistViewModel(stepCountStore: healthStore)
     }
 }

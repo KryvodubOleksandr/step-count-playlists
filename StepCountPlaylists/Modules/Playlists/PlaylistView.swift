@@ -1,5 +1,5 @@
 //
-//  PlaylistsView.swift
+//  PlaylistView.swift
 //  StepCountPlaylists
 //
 //  Created by Oleksandr Kryvodub on 12.11.2024.
@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct PlaylistsView: View {
-    @StateObject var playlistsVM = ViewModelProvider.playlists
-    @State private var playlists: [Playlist] = Playlist.mockPlaylists
+struct PlaylistView: View {
+    @StateObject var playlistVM = ViewModelProvider.playlist
+    @State private var audioTracks: [AudioTrack] = AudioTrack.mockTracks
     
     var body: some View {
         Group {
-            if let activityLevel = playlistsVM.activityLevel {
-                playlistsView(for: activityLevel)
+            if let activityLevel = playlistVM.activityLevel {
+                tracksList(for: activityLevel)
             } else {
                 loaderView
             }
@@ -22,7 +22,7 @@ struct PlaylistsView: View {
         .onAppear {
             //TODO: Add proper error handling
             do {
-                try playlistsVM.loadSteps()
+                try playlistVM.loadSteps()
             } catch {
                 print(error.localizedDescription)
             }
@@ -31,16 +31,16 @@ struct PlaylistsView: View {
 }
 
 //MARK: - playlistsView
-extension PlaylistsView {
-    func playlistsView(for activityLevel: ActivityLevel) -> some View {
+extension PlaylistView {
+    func tracksList(for activityLevel: ActivityLevel) -> some View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 16) {
-                    Text("Here are some playlists that might match your typical (\(activityLevel.rawValue)) energy level for this time of day:")
+                    Text("Here are some tracks you might like at this time of the day:")
                         .font(.body)
-                    ForEach(playlists) { playlist in
-                        if playlist.activityLevel == playlistsVM.activityLevel {
-                            Text(playlist.title)
+                    ForEach(audioTracks) { track in
+                        if track.activityLevel == playlistVM.activityLevel {
+                            Text(track.title)
                                 .font(.title2)
                                 .padding()
                                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -54,14 +54,14 @@ extension PlaylistsView {
                 }
                 .padding()
             }
-            .animation(.default, value: playlistsVM.activityLevel)
-            .navigationTitle("Playlists")
+            .animation(.default, value: playlistVM.activityLevel)
+            .navigationTitle("\(activityLevel.rawValue) playlist")
         }
     }
 }
 
 //MARK: - loaderView
-extension PlaylistsView {
+extension PlaylistView {
     var loaderView: some View {
         VStack {
             Text("Fetching your activity data...")
@@ -71,5 +71,5 @@ extension PlaylistsView {
 }
 
 #Preview {
-    PlaylistsView()
+    PlaylistView()
 }

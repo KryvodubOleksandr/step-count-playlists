@@ -1,5 +1,5 @@
 //
-//  PlaylistsViewModel.swift
+//  PlaylistViewModel.swift
 //  StepCountPlaylists
 //
 //  Created by Oleksandr Kryvodub on 12.11.2024.
@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 import HealthKit
 
-final class PlaylistsViewModel: ObservableObject {
+final class PlaylistViewModel: ObservableObject {
     @Published var activityLevel: ActivityLevel?
     @Published var stepsByDate: [Date: Int] {
         didSet { calculateActivity() }
@@ -24,7 +24,7 @@ final class PlaylistsViewModel: ObservableObject {
 }
 
 //MARK: - calculateActivity
-extension PlaylistsViewModel {
+extension PlaylistViewModel {
     private func calculateActivity() {
         var avgStepCountForHour: [Int: Int] = [:]
         for value in 0...23 {
@@ -67,12 +67,14 @@ extension PlaylistsViewModel {
 //MARK: - loadSteps
 //extension PlaylistsViewModel {
     enum ActivityLevel: String {
-        case low, moderate, high
+        case low = "Relaxing"
+        case moderate = "Focused"
+        case high = "Energizing"
     }
 //}
 
 //MARK: - loadSteps
-extension PlaylistsViewModel {
+extension PlaylistViewModel {
     private func getQuery() throws -> HKStatisticsCollectionQuery {
         guard let stepCountType = HKObjectType.quantityType(forIdentifier: .stepCount) else {
             throw HealthKitError.stepCountType
