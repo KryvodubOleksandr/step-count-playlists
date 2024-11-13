@@ -7,6 +7,5 @@ Trade-offs:
 - No proper error handling
 
 Ways to improve: 
-- move steps count fetching and calculation into separate classes
 - improve types safety for calculation algorithm and cover it with tests
 - save steps count data to keychain
