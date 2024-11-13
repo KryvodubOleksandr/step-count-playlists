@@ -7,110 +7,21 @@
 
 import Foundation
 import SwiftUI
-import HealthKit
 
 final class PlaylistViewModel: ObservableObject {
     @Published var activityLevel: ActivityLevel?
-    @Published var stepsByDate: [Date: Int] {
-        // Calculating activity level once stepsByDate dictionary is fetched
-        didSet { calculateActivity() }
-    }
-    private let stepCountStore: StepCountLoading
+    private let hkStepsManager: HKStepsLoading
     
-    init(stepCountStore: StepCountLoading) {
-        self.stepsByDate = [:]
-        self.stepCountStore = stepCountStore
+    init(hkStepsManager: HKStepsLoading) {
         self.activityLevel = nil
-    }
-}
-
-//MARK: - calculateActivity
-extension PlaylistViewModel {
-    private func calculateActivity() {
-        var avgStepCountForHour: [Int: Int] = [:]
-        // Calculating average steps for every hour throughout last week
-        for value in 0...23 {
-            let nearestHourDate = Date().adding(hours: value).nearestHour()
-            avgStepCountForHour[nearestHourDate.asHours] = calculateStepsFor(hours: value, date: nearestHourDate)
-        }
-
-        let maxStepCount = Array(avgStepCountForHour.values).max() ?? 0
-        let minStepCount = Array(avgStepCountForHour.values).min() ?? 0
-        let avgStepCount = minStepCount + maxStepCount / 2
-        let lowerBound = minStepCount + avgStepCount / 2
-        let upperBound = maxStepCount - avgStepCount / 2
-        let stepsForNow = avgStepCountForHour[Date().asHours] ?? 0
-        
-        withAnimation {
-            if stepsForNow < lowerBound {
-                self.activityLevel = .low
-            } else if stepsForNow >= lowerBound && stepsForNow < upperBound {
-                self.activityLevel = .moderate
-            } else if stepsForNow >= upperBound {
-                activityLevel = .high
-            }
-        }
+        self.hkStepsManager = hkStepsManager
     }
     
-    // Iterating through every day of the week to calculate an average step for a given time
-    private func calculateStepsFor(hours: Int, date: Date) -> Int {
-        var stepCountArray: [Int] = []
-        for value in -7...0 {
-            let date = date.adding(days: value)
-            if let steps = self.stepsByDate[date] {
-                stepCountArray.append(steps)
-            }
-        }
-
-        let avgStepCount = stepCountArray.reduce(0, +) / stepCountArray.count
-        return avgStepCount
-    }
-}
-
-//MARK: - loadSteps
-extension PlaylistViewModel {
-    private func prepareQuery() throws -> HKStatisticsCollectionQuery {
-        guard let stepCountType = HKObjectType.quantityType(forIdentifier: .stepCount) else {
-            throw HealthKitError.stepCountType
-        }
-        
-        var interval = DateComponents()
-        interval.hour = 1
-        
-        let calendar = Calendar.current
-        guard let anchorDate = calendar.date(bySettingHour: 12, minute: 0, second: 0, of: Date()) else {
-            throw CalendarError.dateCreation
-        }
-
-        let query = HKStatisticsCollectionQuery.init(
-            quantityType: stepCountType,
-            quantitySamplePredicate: nil,
-            options: .cumulativeSum,
-            anchorDate: anchorDate,
-            intervalComponents: interval
-        )
-        return query
-    }
-    
-    func loadSteps() throws {
-        guard let startOfWeek = Calendar.current.date(byAdding: .weekOfYear, value: -1, to: Date()) else {
-            throw CalendarError.dateCreation
-        }
-        var stepsByDateDict: [Date: Int] = [:]
-        let query = try prepareQuery()
-        
-        query.initialResultsHandler = { [weak self] query, results, error in
-            guard let self else { return }
-            results?.enumerateStatistics(from: startOfWeek, to: Date()) { result, _ in
-                let stepCount = Int(result.sumQuantity()?.doubleValue(for: HKUnit.count()) ?? 0)
-                stepsByDateDict[result.startDate] = stepCount
-            }
-            
+    func getActivity() throws {
+        try hkStepsManager.loadStepsByDate { [weak self] stepsByDate in
             DispatchQueue.main.async {
-                self.stepsByDate = stepsByDateDict
+                self?.activityLevel = ActivityManager.calculateActivity(from: stepsByDate)
             }
         }
-        
-        stepCountStore.execute(query)
     }
 }

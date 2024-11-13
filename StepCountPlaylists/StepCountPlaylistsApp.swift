@@ -7,9 +7,8 @@
 
 import SwiftUI
 import HealthKit
-import HealthKitUI
 
-let healthStore = HKHealthStore()
+let healthKitManager = HealthKitManager(store: HKHealthStore())
 
 @main
 struct StepCountPlaylistsApp: App {

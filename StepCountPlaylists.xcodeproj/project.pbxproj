@@ -13,13 +13,16 @@
 		C6BC73652CE33BFD0055DB70 /* StepCountPlaylistsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BC73602CE33BFD0055DB70 /* StepCountPlaylistsApp.swift */; };
 		C6BC73692CE33C310055DB70 /* PlaylistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BC73682CE33C310055DB70 /* PlaylistViewModel.swift */; };
 		C6BC736B2CE33F330055DB70 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BC736A2CE33F330055DB70 /* Errors.swift */; };
-		C6BC736D2CE343090055DB70 /* StepCountLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BC736C2CE343090055DB70 /* StepCountLoading.swift */; };
+		C6BC736D2CE343090055DB70 /* HKStepsLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BC736C2CE343090055DB70 /* HKStepsLoading.swift */; };
 		C6BC73752CE346900055DB70 /* ViewModelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BC73742CE346900055DB70 /* ViewModelProvider.swift */; };
 		C6BC73992CE368860055DB70 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BC73982CE368860055DB70 /* Date.swift */; };
 		C6BC739E2CE3753E0055DB70 /* AudioTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BC739D2CE3753E0055DB70 /* AudioTrack.swift */; };
 		C6BC73A62CE3B8850055DB70 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BC73A52CE3B8850055DB70 /* RootViewModel.swift */; };
 		C6BC73A82CE3B88D0055DB70 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BC73A72CE3B88D0055DB70 /* RootView.swift */; };
-		C6BC73AA2CE3C3D70055DB70 /* HKAuthorizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BC73A92CE3C3D70055DB70 /* HKAuthorizable.swift */; };
+		C6BC73AA2CE3C3D70055DB70 /* HKAuthorizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BC73A92CE3C3D70055DB70 /* HKAuthorizing.swift */; };
+		C6BC73AD2CE4C85E0055DB70 /* ActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BC73AC2CE4C85E0055DB70 /* ActivityManager.swift */; };
+		C6BC73AF2CE4C8920055DB70 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BC73AE2CE4C8920055DB70 /* HealthKitManager.swift */; };
+		C6BC73B12CE4D4390055DB70 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BC73B02CE4D4390055DB70 /* Array.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,13 +34,16 @@
 		C6BC73602CE33BFD0055DB70 /* StepCountPlaylistsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepCountPlaylistsApp.swift; sourceTree = "<group>"; };
 		C6BC73682CE33C310055DB70 /* PlaylistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistViewModel.swift; sourceTree = "<group>"; };
 		C6BC736A2CE33F330055DB70 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
-		C6BC736C2CE343090055DB70 /* StepCountLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepCountLoading.swift; sourceTree = "<group>"; };
+		C6BC736C2CE343090055DB70 /* HKStepsLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKStepsLoading.swift; sourceTree = "<group>"; };
 		C6BC73742CE346900055DB70 /* ViewModelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProvider.swift; sourceTree = "<group>"; };
 		C6BC73982CE368860055DB70 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		C6BC739D2CE3753E0055DB70 /* AudioTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioTrack.swift; sourceTree = "<group>"; };
 		C6BC73A52CE3B8850055DB70 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		C6BC73A72CE3B88D0055DB70 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
-		C6BC73A92CE3C3D70055DB70 /* HKAuthorizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKAuthorizable.swift; sourceTree = "<group>"; };
+		C6BC73A92CE3C3D70055DB70 /* HKAuthorizing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKAuthorizing.swift; sourceTree = "<group>"; };
+		C6BC73AC2CE4C85E0055DB70 /* ActivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityManager.swift; sourceTree = "<group>"; };
+		C6BC73AE2CE4C8920055DB70 /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
+		C6BC73B02CE4D4390055DB70 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				C6BC73602CE33BFD0055DB70 /* StepCountPlaylistsApp.swift */,
+				C6BC73AB2CE4C8490055DB70 /* Utilities */,
 				C6BC739C2CE375330055DB70 /* Models */,
 				C6BC73972CE3687C0055DB70 /* Extensions */,
 				C6BC73732CE346770055DB70 /* Architecture */,
@@ -103,8 +110,8 @@
 		C6BC736E2CE345BD0055DB70 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				C6BC736C2CE343090055DB70 /* StepCountLoading.swift */,
-				C6BC73A92CE3C3D70055DB70 /* HKAuthorizable.swift */,
+				C6BC736C2CE343090055DB70 /* HKStepsLoading.swift */,
+				C6BC73A92CE3C3D70055DB70 /* HKAuthorizing.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -139,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				C6BC73982CE368860055DB70 /* Date.swift */,
+				C6BC73B02CE4D4390055DB70 /* Array.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -158,6 +166,15 @@
 				C6BC73A72CE3B88D0055DB70 /* RootView.swift */,
 			);
 			path = Root;
+			sourceTree = "<group>";
+		};
+		C6BC73AB2CE4C8490055DB70 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				C6BC73AC2CE4C85E0055DB70 /* ActivityManager.swift */,
+				C6BC73AE2CE4C8920055DB70 /* HealthKitManager.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,13 +252,16 @@
 			files = (
 				C6BC736B2CE33F330055DB70 /* Errors.swift in Sources */,
 				C6BC73752CE346900055DB70 /* ViewModelProvider.swift in Sources */,
+				C6BC73AD2CE4C85E0055DB70 /* ActivityManager.swift in Sources */,
 				C6BC73992CE368860055DB70 /* Date.swift in Sources */,
 				C6BC739E2CE3753E0055DB70 /* AudioTrack.swift in Sources */,
 				C6BC73A82CE3B88D0055DB70 /* RootView.swift in Sources */,
-				C6BC736D2CE343090055DB70 /* StepCountLoading.swift in Sources */,
+				C6BC736D2CE343090055DB70 /* HKStepsLoading.swift in Sources */,
 				C6BC73642CE33BFD0055DB70 /* PlaylistView.swift in Sources */,
-				C6BC73AA2CE3C3D70055DB70 /* HKAuthorizable.swift in Sources */,
+				C6BC73AA2CE3C3D70055DB70 /* HKAuthorizing.swift in Sources */,
+				C6BC73B12CE4D4390055DB70 /* Array.swift in Sources */,
 				C6BC73652CE33BFD0055DB70 /* StepCountPlaylistsApp.swift in Sources */,
+				C6BC73AF2CE4C8920055DB70 /* HealthKitManager.swift in Sources */,
 				C6BC73A62CE3B8850055DB70 /* RootViewModel.swift in Sources */,
 				C6BC73692CE33C310055DB70 /* PlaylistViewModel.swift in Sources */,
 			);

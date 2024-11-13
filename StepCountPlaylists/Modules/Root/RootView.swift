@@ -2,7 +2,7 @@
 //  RootView.swift
 //  StepCountPlaylists
 //
-//  Created by Alexander Sharko on 12.11.2024.
+//  Created by Oleksandr Kryvodub on 12.11.2024.
 //
 
 import SwiftUI
@@ -31,7 +31,7 @@ private extension RootView {
         Text("")
             .task {
                 do {
-                    try await rootVM.getHealthKitAuthorization()
+                    try await rootVM.requestAuthorizations()
                 } catch {
                     print(error.localizedDescription)
                 }

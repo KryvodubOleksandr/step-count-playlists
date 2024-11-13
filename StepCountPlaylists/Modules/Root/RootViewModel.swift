@@ -2,7 +2,7 @@
 //  RootViewModel.swift
 //  StepCountPlaylists
 //
-//  Created by Alexander Sharko on 12.11.2024.
+//  Created by Oleksandr Kryvodub on 12.11.2024.
 //
 
 import Foundation
@@ -10,19 +10,18 @@ import HealthKit
 
 class RootViewModel: ObservableObject {
     @Published var authorizationStatus: HKAuthorizationStatus
-    private let hkAuthorizingStore: HKAuthorizing
-    private let hkObjectType: HKObjectType
+    private let hkAuthorizationManager: HKAuthorizing
+    private let hkObjectType: HKSampleType
     
-    init(hkAuthorizingStore: HKAuthorizing) {
-        self.hkAuthorizingStore = hkAuthorizingStore
+    init(hkAuthorizationManager: HKAuthorizing) {
+        self.hkAuthorizationManager = hkAuthorizationManager
         self.hkObjectType = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)!
-        self.authorizationStatus = healthStore.authorizationStatus(for: hkObjectType)
+        self.authorizationStatus = hkAuthorizationManager.getAuthorizationStatuses(for: [hkObjectType]).minimumCommonStatus
     }
     
     @MainActor
-    func getHealthKitAuthorization() async throws {
-        let healthKitTypes: Set = [HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)!]
-        try await hkAuthorizingStore.requestAuthorization(toShare: healthKitTypes, read: healthKitTypes)
-        self.authorizationStatus = hkAuthorizingStore.authorizationStatus(for: hkObjectType)
+    func requestAuthorizations() async throws {
+        let statuses = try await hkAuthorizationManager.requestAuthorizations(for: [hkObjectType])
+        self.authorizationStatus = statuses.minimumCommonStatus
     }
 }

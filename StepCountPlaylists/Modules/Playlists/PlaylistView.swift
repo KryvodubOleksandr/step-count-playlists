@@ -22,7 +22,7 @@ struct PlaylistView: View {
         .onAppear {
             //TODO: Add proper error handling
             do {
-                try playlistVM.loadSteps()
+                try playlistVM.getActivity()
             } catch {
                 print(error.localizedDescription)
             }

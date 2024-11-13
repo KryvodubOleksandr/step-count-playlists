@@ -2,7 +2,7 @@
 //  Date.swift
 //  StepCountPlaylists
 //
-//  Created by Alexander Sharko on 12.11.2024.
+//  Created by Oleksandr Kryvodub on 12.11.2024.
 //
 
 import Foundation
